@@ -1,12 +1,14 @@
 <?php
 
 /**
- * The MetaModels extension allows the creation of multiple collections of custom items,
- * each with its own unique set of selectable attributes, with attribute extendability.
- * The Front-End modules allow you to build powerful listing and filtering of the
- * data in each collection.
+ * This file is part of MetaModels/filter_tags.
  *
- * PHP version 5
+ * (c) 2012-2016 The MetaModels team.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * This project is provided in good faith and hope to be usable by anyone.
  *
  * @package    MetaModels
  * @subpackage FilterTags
@@ -15,8 +17,8 @@
  * @author     Christian de la Haye <service@delahaye.de>
  * @author     Andreas Isaak <info@andreas-isaak.de>
  * @author     David Molineus <mail@netzmacht.de>
- * @copyright  The MetaModels team.
- * @license    LGPL.
+ * @copyright  2012-2016 The MetaModels team.
+ * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0
  * @filesource
  */
 
