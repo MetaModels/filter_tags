@@ -16,6 +16,4 @@
 
 CREATE TABLE `tl_metamodel_filtersetting` (
   `useor` char(1) NOT NULL default '0',
-  `onlyused` char(1) NOT NULL default '0',
-  `onlypossible` char(1) NOT NULL default '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
