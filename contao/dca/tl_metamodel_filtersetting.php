@@ -17,6 +17,7 @@
  * @author     Christian de la Haye <service@delahaye.de>
  * @author     Andreas Isaak <info@andreas-isaak.de>
  * @author     David Molineus <mail@netzmacht.de>
+ * @author     Ingolf Steinhardt <info@e-spin.de>
  * @copyright  2012-2016 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0
  * @filesource
@@ -34,30 +35,6 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends d
         'onlyused',
         'onlypossible',
         'skipfilteroptions'
-    ),
-);
-
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['onlyused'] = array
-(
-    'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlyused'],
-    'exclude'                 => true,
-    'default'                 => true,
-    'inputType'               => 'checkbox',
-    'eval'                    => array
-    (
-        'tl_class'            => 'w50',
-    ),
-);
-
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['onlypossible'] = array
-(
-    'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlypossible'],
-    'exclude'                 => true,
-    'default'                 => true,
-    'inputType'               => 'checkbox',
-    'eval'                    => array
-    (
-        'tl_class'            => 'w50',
     ),
 );
 
