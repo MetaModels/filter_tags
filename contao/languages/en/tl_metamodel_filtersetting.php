@@ -21,11 +21,13 @@
  */
 
 /**
- * filter types
+ * Filter types.
  */
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['typenames']['tags'] = 'Multi selection';
 
 /**
- * fields
+ * Fields.
  */
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'] = array('OR', 'OR-linking of the tags. Is automatically set if the attribute is aselect-type.');
+$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'][0] = 'OR';
+$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'][1] =
+    'OR-linking of the tags. Is automatically set if the attribute is aselect-type.';
