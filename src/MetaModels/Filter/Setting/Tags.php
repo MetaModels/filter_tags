@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/filter_tags.
  *
- * (c) 2012-2016 The MetaModels team.
+ * (c) 2012-2017 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,10 +18,12 @@
  * @author     Andreas Isaak <info@andreas-isaak.de>
  * @author     David Maack <david.maack@arcor.de>
  * @author     David Molineus <mail@netzmacht.de>
- * @copyright  2012-2016 The MetaModels team.
+ * @author     Ingolf Steinhardt <info@e-spin.de>
+ * @copyright  2012-2017 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0
  * @filesource
  */
+
 
 namespace MetaModels\Filter\Setting;
 
