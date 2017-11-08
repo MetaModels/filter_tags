@@ -51,8 +51,8 @@
         }
     },
     "extra":{
+        "contao-manager-plugin": "MetaModels\\FilterTagsBundle\\ContaoManager\\Plugin",
         "contao": {
-            "contao-manager-plugin": "MetaModels\\FilterTagsBundle\\ContaoManager\\Plugin",
             "transifex": {
                 "project": "metamodels",
                 "prefix": "filter_tags-",
