@@ -11,7 +11,7 @@
  * This project is provided in good faith and hope to be usable by anyone.
  *
  * @package    MetaModels
- * @subpackage FilterTags
+ * @subpackage FilterTagsBundle
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
  * @copyright  2012-2017 The MetaModels team.
@@ -19,7 +19,9 @@
  * @filesource
  */
 
-namespace MetaModels\Filter\Setting;
+namespace MetaModels\FilterTagsBundle\FilterSetting;
+
+use MetaModels\Filter\Setting\AbstractFilterSettingTypeFactory;
 
 /**
  * Attribute type factory for tags filter settings.
@@ -35,18 +37,18 @@ class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
 
         $this
             ->setTypeName('tags')
-            ->setTypeIcon('system/modules/metamodelsfilter_tags/html/filter_tags.png')
-            ->setTypeClass('MetaModels\Filter\Setting\Tags')
+            ->setTypeIcon('bundles/metamodelsfiltertags/filter_tags.png')
+            ->setTypeClass(Tags::class)
             ->allowAttributeTypes();
 
-        foreach (array(
+        foreach ([
             'select',
             'translatedselect',
             'text',
             'translatedtext',
             'tags',
             'translatedtags',
-         ) as $attribute) {
+        ] as $attribute) {
             $this->addKnownAttributeType($attribute);
         }
     }

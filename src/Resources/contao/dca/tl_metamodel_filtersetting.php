@@ -11,7 +11,7 @@
  * This project is provided in good faith and hope to be usable by anyone.
  *
  * @package    MetaModels
- * @subpackage FilterTags
+ * @subpackage FilterTagsBundle
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Stefan Heimes <stefan_heimes@hotmail.com>
  * @author     Christian de la Haye <service@delahaye.de>
@@ -23,10 +23,8 @@
  * @filesource
  */
 
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends default'] = array
-(
-    '+config' => array
-    (
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends default'] = [
+    '+config' => [
         'attr_id',
         'urlparam',
         'label',
@@ -35,17 +33,16 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends d
         'onlyused',
         'onlypossible',
         'skipfilteroptions'
-    ),
-);
+    ],
+];
 
-$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['useor'] = array
-(
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['useor'] = [
     'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'],
     'exclude'                 => true,
     'default'                 => true,
     'inputType'               => 'checkbox',
-    'eval'                    => array
-    (
+    'sql'                     => 'char(1) NOT NULL default \'0\'',
+    'eval'                    => [
         'tl_class'            => 'w50',
-    ),
-);
+    ],
+];

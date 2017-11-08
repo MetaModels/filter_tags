@@ -11,7 +11,7 @@
  * This project is provided in good faith and hope to be usable by anyone.
  *
  * @package    MetaModels
- * @subpackage FilterTags
+ * @subpackage FilterTagsBundle
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Stefan Heimes <stefan_heimes@hotmail.com>
  * @author     Christian de la Haye <service@delahaye.de>
@@ -25,7 +25,7 @@
  */
 
 
-namespace MetaModels\Filter\Setting;
+namespace MetaModels\FilterTagsBundle\FilterSetting;
 
 use MetaModels\Attribute\IAttribute;
 use MetaModels\Filter\Filter;
@@ -34,14 +34,11 @@ use MetaModels\Filter\Rules\Condition\ConditionAnd;
 use MetaModels\Filter\Rules\Condition\ConditionOr;
 use MetaModels\Filter\Rules\SearchAttribute;
 use MetaModels\Filter\Rules\StaticIdList;
+use MetaModels\Filter\Setting\SimpleLookup;
 use MetaModels\FrontendIntegration\FrontendFilterOptions;
 
 /**
- * Filter "tags" for FE-filtering, based on filters by the MetaModels team.
- *
- * @package    MetaModels
- * @subpackage FilterTags
- * @author     Christian de la Haye <service@delahaye.de>
+ * Filter "tags" for FE-filtering.
  */
 class Tags extends SimpleLookup
 {
