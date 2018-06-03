@@ -43,12 +43,13 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends d
 
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['useor'] = array
 (
-    'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'],
-    'exclude'                 => true,
-    'default'                 => true,
-    'inputType'               => 'checkbox',
-    'eval'                    => array
+    'label'     => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'],
+    'exclude'   => true,
+    'default'   => true,
+    'inputType' => 'checkbox',
+    'sql'       => 'char(1) NOT NULL default \'0\'',
+    'eval'      => array
     (
-        'tl_class'            => 'w50',
+        'tl_class' => 'w50',
     ),
 );
