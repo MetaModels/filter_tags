@@ -52,12 +52,6 @@
     "contao": {
       "sources": {
         "contao": "system/modules/metamodelsfilter_tags"
-      },
-      "transifex": {
-        "project": "metamodels",
-        "prefix": "filter_tags-",
-        "languages_cto": "contao/languages",
-        "languages_tx": ".tx"
       }
     },
     "branch-alias": {
