@@ -37,10 +37,6 @@ use MetaModels\FrontendIntegration\FrontendFilterOptions;
 
 /**
  * Filter "tags" for FE-filtering, based on filters by the MetaModels team.
- *
- * @package    MetaModels
- * @subpackage FilterTags
- * @author     Christian de la Haye <service@delahaye.de>
  */
 class Tags extends SimpleLookup
 {
