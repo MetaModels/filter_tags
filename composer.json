@@ -1,69 +1,68 @@
 {
-    "name":"metamodels/filter_tags",
-    "description":"MetaModels tags filter",
-    "keywords":["contao", "metamodels", "filter", "tags"],
-    "type":"contao-module",
-    "homepage":"http://now.metamodel.me/",
-    "license":"LGPL-3.0-or-later",
-    "authors":[
-        {
-            "name":"Christian Schiffler",
-            "email":"c.schiffler@cyberspectrum.de",
-            "homepage":"http://www.cyberspectrum.de",
-            "role":"Developer"
-        },
-        {
-            "name":"Stefan Heimes",
-            "email":"stefan_heimes@hotmail.com",
-            "role":"Developer"
-        }
-    ],
-    "support":{
-        "email":"mail@metamodel.me",
-        "issues":"https://github.com/MetaModels/filter_tags/issues",
-        "wiki":"http://de.contaowiki.org/MetaModels",
-        "irc":"irc://irc.freenode.org/contao.mm",
-        "source":"https://github.com/MetaModels/filter_tags"
+  "name": "metamodels/filter_tags",
+  "description": "MetaModels tags filter",
+  "keywords": [
+    "contao",
+    "metamodels",
+    "filter",
+    "tags"
+  ],
+  "type": "contao-module",
+  "homepage": "http://now.metamodel.me/",
+  "license": "LGPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Christian Schiffler",
+      "email": "c.schiffler@cyberspectrum.de",
+      "homepage": "http://www.cyberspectrum.de",
+      "role": "Developer"
     },
-    "require":{
-        "php": "^5.6 || ^7.0",
-        "contao/core-bundle": "^4.4",
-        "contao-community-alliance/dc-general": "^2.1@dev",
-        "metamodels/core": "^2.1@dev",
-        "symfony/dependency-injection": "^3.3 || ^4.0"
+    {
+      "name": "Stefan Heimes",
+      "email": "stefan_heimes@hotmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "mail@metamodel.me",
+    "issues": "https://github.com/MetaModels/filter_tags/issues",
+    "wiki": "http://de.contaowiki.org/MetaModels",
+    "irc": "irc://irc.freenode.org/contao.mm",
+    "source": "https://github.com/MetaModels/filter_tags"
+  },
+  "require": {
+    "php": "^5.6 || ^7.0",
+    "contao-community-alliance/dc-general": "^2.1@dev",
+    "contao/core-bundle": "^4.4",
+    "metamodels/core": "^2.1@dev",
+    "symfony/dependency-injection": "^3.3 || ^4.0"
+  },
+  "require-dev": {
+    "phpcq/all-tasks": "^1.2",
+    "contao/manager-plugin": "~2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "MetaModels\\FilterTagsBundle\\": "src"
     },
-    "require-dev": {
-        "cyberspectrum/contao-toolbox": "~0.7",
-        "phpcq/all-tasks": "~1.2",
-        "contao/manager-plugin": "~2.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "MetaModels\\FilterTagsBundle\\": "src"
-        },
-        "files": [
-            "src/deprecated-autoload.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "MetaModels\\FilterTagsBundle\\Test\\": "tests"
-        }
-    },
-    "extra":{
-        "contao-manager-plugin": "MetaModels\\FilterTagsBundle\\ContaoManager\\Plugin",
-        "contao": {
-            "transifex": {
-                "project": "metamodels",
-                "prefix": "filter_tags-",
-                "languages_cto": "src/Resources/contao/languages",
-                "languages_tx": ".tx"
-            }
-        },
-        "branch-alias": {
-            "dev-master": "2.0.x-dev",
-            "dev-feature/contao4": "2.1.x-dev"
-        }
-    },
-    "prefer-stable": true
+    "files": [
+      "src/deprecated-autoload.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MetaModels\\FilterTagsBundle\\Test\\": "tests"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "MetaModels\\FilterTagsBundle\\ContaoManager\\Plugin",
+    "branch-alias": {
+      "dev-master": "2.0.x-dev",
+      "dev-feature/contao4": "2.1.x-dev"
+    }
+  },
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  }
 }
