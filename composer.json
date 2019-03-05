@@ -59,7 +59,6 @@
       "dev-develop": "2.1.x-dev"
     }
   },
-  "prefer-stable": true,
   "config": {
     "sort-packages": true
   }
