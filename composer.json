@@ -39,9 +39,9 @@
     "symfony/http-kernel": "^3.3 || ^4.0"
   },
   "require-dev": {
-    "phpcq/all-tasks": "^1.2",
+    "contao/manager-plugin": "~2.1",
     "menatwork/contao-multicolumnwizard-bundle": "^3.4.0@beta",
-    "contao/manager-plugin": "~2.1"
+    "phpcq/all-tasks": "^1.2"
   },
   "autoload": {
     "psr-4": {
