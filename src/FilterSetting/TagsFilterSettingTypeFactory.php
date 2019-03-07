@@ -21,6 +21,7 @@
 namespace MetaModels\FilterTagsBundle\FilterSetting;
 
 use MetaModels\Filter\Setting\AbstractFilterSettingTypeFactory;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Attribute type factory for tags filter settings.
@@ -28,9 +29,16 @@ use MetaModels\Filter\Setting\AbstractFilterSettingTypeFactory;
 class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
 {
     /**
+     * The event dispatcher.
+     *
+     * @var EventDispatcherInterface
+     */
+    private $dispatcher;
+
+    /**
      * {@inheritDoc}
      */
-    public function __construct()
+    public function __construct(EventDispatcherInterface $dispatcher)
     {
         parent::__construct();
 
@@ -50,5 +58,15 @@ class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
         ] as $attribute) {
             $this->addKnownAttributeType($attribute);
         }
+
+        $this->dispatcher = $dispatcher;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createInstance($information, $filterSettings)
+    {
+        return new Tags($filterSettings, $information, $this->dispatcher);
     }
 }

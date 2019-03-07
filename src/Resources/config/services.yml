@@ -1,6 +1,8 @@
 services:
     metamodels.filter_tags.factory:
         class: MetaModels\FilterTagsBundle\FilterSetting\TagsFilterSettingTypeFactory
+        arguments:
+          - '@event_dispatcher'
         tags:
           - { name: metamodels.filter_factory }
 
