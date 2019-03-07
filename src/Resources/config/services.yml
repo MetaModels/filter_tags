@@ -3,6 +3,7 @@ services:
         class: MetaModels\FilterTagsBundle\FilterSetting\TagsFilterSettingTypeFactory
         arguments:
           - '@event_dispatcher'
+          - '@MetaModels\Filter\FilterUrlBuilder'
         tags:
           - { name: metamodels.filter_factory }
 

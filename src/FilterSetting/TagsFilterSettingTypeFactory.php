@@ -20,6 +20,7 @@
 
 namespace MetaModels\FilterTagsBundle\FilterSetting;
 
+use MetaModels\Filter\FilterUrlBuilder;
 use MetaModels\Filter\Setting\AbstractFilterSettingTypeFactory;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -36,9 +37,16 @@ class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
     private $dispatcher;
 
     /**
+     * The filter URL builder.
+     *
+     * @var FilterUrlBuilder
+     */
+    private $filterUrlBuilder;
+
+    /**
      * {@inheritDoc}
      */
-    public function __construct(EventDispatcherInterface $dispatcher)
+    public function __construct(EventDispatcherInterface $dispatcher, FilterUrlBuilder $filterUrlBuilder)
     {
         parent::__construct();
 
@@ -59,7 +67,8 @@ class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
             $this->addKnownAttributeType($attribute);
         }
 
-        $this->dispatcher = $dispatcher;
+        $this->dispatcher       = $dispatcher;
+        $this->filterUrlBuilder = $filterUrlBuilder;
     }
 
     /**
@@ -67,6 +76,6 @@ class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
      */
     public function createInstance($information, $filterSettings)
     {
-        return new Tags($filterSettings, $information, $this->dispatcher);
+        return new Tags($filterSettings, $information, $this->dispatcher, $this->filterUrlBuilder);
     }
 }
