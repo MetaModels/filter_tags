@@ -24,7 +24,7 @@
  */
 
 
-namespace MetaModels\Filter\Setting;
+namespace MetaModels\FilterTagsBundle\FilterSetting;
 
 use MetaModels\Attribute\IAttribute;
 use MetaModels\Filter\Filter;
@@ -33,10 +33,11 @@ use MetaModels\Filter\Rules\Condition\ConditionAnd;
 use MetaModels\Filter\Rules\Condition\ConditionOr;
 use MetaModels\Filter\Rules\SearchAttribute;
 use MetaModels\Filter\Rules\StaticIdList;
+use MetaModels\Filter\Setting\SimpleLookup;
 use MetaModels\FrontendIntegration\FrontendFilterOptions;
 
 /**
- * Filter "tags" for FE-filtering, based on filters by the MetaModels team.
+ * Filter "tags" for FE-filtering.
  */
 class Tags extends SimpleLookup
 {

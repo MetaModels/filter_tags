@@ -17,15 +17,13 @@
  * @filesource
  */
 
-use MetaModels\Filter\Setting\Events\CreateFilterSettingFactoryEvent;
-use MetaModels\Filter\Setting\TagsFilterSettingTypeFactory;
-use MetaModels\MetaModelsEvents;
+namespace MetaModels\FilterTagsBundle;
 
-return array
-(
-    MetaModelsEvents::FILTER_SETTING_FACTORY_CREATE => array(
-        function (CreateFilterSettingFactoryEvent $event) {
-            $event->getFactory()->addTypeFactory(new TagsFilterSettingTypeFactory());
-        }
-    )
-);
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+/**
+ * The Bundle class.
+ */
+class MetaModelsFilterTagsBundle extends Bundle
+{
+}

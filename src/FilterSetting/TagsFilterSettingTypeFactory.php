@@ -18,7 +18,11 @@
  * @filesource
  */
 
-namespace MetaModels\Filter\Setting;
+namespace MetaModels\FilterTagsBundle\FilterSetting;
+
+use MetaModels\Filter\FilterUrlBuilder;
+use MetaModels\Filter\Setting\AbstractFilterSettingTypeFactory;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Attribute type factory for tags filter settings.
@@ -26,27 +30,52 @@ namespace MetaModels\Filter\Setting;
 class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
 {
     /**
+     * The event dispatcher.
+     *
+     * @var EventDispatcherInterface
+     */
+    private $dispatcher;
+
+    /**
+     * The filter URL builder.
+     *
+     * @var FilterUrlBuilder
+     */
+    private $filterUrlBuilder;
+
+    /**
      * {@inheritDoc}
      */
-    public function __construct()
+    public function __construct(EventDispatcherInterface $dispatcher, FilterUrlBuilder $filterUrlBuilder)
     {
         parent::__construct();
 
         $this
             ->setTypeName('tags')
-            ->setTypeIcon('system/modules/metamodelsfilter_tags/html/filter_tags.png')
-            ->setTypeClass('MetaModels\Filter\Setting\Tags')
+            ->setTypeIcon('bundles/metamodelsfiltertags/filter_tags.png')
+            ->setTypeClass(Tags::class)
             ->allowAttributeTypes();
 
-        foreach (array(
+        foreach ([
             'select',
             'translatedselect',
             'text',
             'translatedtext',
             'tags',
             'translatedtags',
-         ) as $attribute) {
+        ] as $attribute) {
             $this->addKnownAttributeType($attribute);
         }
+
+        $this->dispatcher       = $dispatcher;
+        $this->filterUrlBuilder = $filterUrlBuilder;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createInstance($information, $filterSettings)
+    {
+        return new Tags($filterSettings, $information, $this->dispatcher, $this->filterUrlBuilder);
     }
 }

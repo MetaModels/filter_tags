@@ -1,0 +1,22 @@
+services:
+    metamodels.filter_tags.factory:
+        class: MetaModels\FilterTagsBundle\FilterSetting\TagsFilterSettingTypeFactory
+        arguments:
+          - '@event_dispatcher'
+          - '@MetaModels\Filter\FilterUrlBuilder'
+        tags:
+          - { name: metamodels.filter_factory }
+
+    metamodels.filter_tags.listener.filter_setting_renderer:
+        class: MetaModels\FilterTagsBundle\EventListener\TagsFilterSettingTypeRendererListener
+        arguments:
+          - "@metamodels.filter_setting_factory"
+          - "@event_dispatcher"
+          - "@metamodels.assets.icon_builder"
+          - "@cca.dc-general.scope-matcher"
+        tags:
+          - {
+              name: kernel.event_listener,
+              event: 'dc-general.view.contao2backend.model-to-label',
+              method: modelToLabel
+            }
