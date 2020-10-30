@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/filter_tags.
  *
- * (c) 2012-2017 The MetaModels team.
+ * (c) 2012-2020 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,7 +15,7 @@
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Christian de la Haye <service@delahaye.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
- * @copyright  2012-2017 The MetaModels team.
+ * @copyright  2012-2020 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0
  * @filesource
  */
@@ -28,6 +28,9 @@ $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['typenames']['tags'] = 'Multi 
 /**
  * Fields.
  */
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'][0] = 'OR';
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'][1] =
+$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'][0]           = 'OR';
+$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'][1]           =
     'OR-linking of the tags. Is automatically set if the attribute is aselect-type.';
+$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['show_select_all'][0] = 'Show checkbox "add all"';
+$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['show_select_all'][1] =
+    'If this checkbox set, show checkbox "add all" to activate all checkboxes at once.';
