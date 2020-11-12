@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/filter_tags.
  *
- * (c) 2012-2019 The MetaModels team.
+ * (c) 2012-2020 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,7 +18,7 @@
  * @author     David Maack <david.maack@arcor.de>
  * @author     David Molineus <mail@netzmacht.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
- * @copyright  2012-2019 The MetaModels team.
+ * @copyright  2012-2020 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
@@ -67,7 +67,7 @@ class Tags extends SimpleLookup
         $arrCurrent = (array) $arrWidget['value'];
 
         if ($this->isActiveFrontendFilterValue($arrWidget, $arrFilterUrl, $strKeyOption)) {
-            $arrCurrent = array_diff($arrCurrent, array($strKeyOption));
+            $arrCurrent = array_diff($arrCurrent, [$strKeyOption]);
         } else {
             $arrCurrent[] = $strKeyOption;
         }
@@ -97,10 +97,10 @@ class Tags extends SimpleLookup
             }
 
             // We allow the current and the fallback language to be searched by default.
-            $arrValidLanguages = array(
+            $arrValidLanguages = [
                 $this->getMetaModel()->getActiveLanguage(),
                 $this->getMetaModel()->getFallbackLanguage()
-            );
+            ];
 
             foreach ($arrParamValue as $strParamValue) {
                 // Restrict to valid options for obvious reasons.
@@ -137,7 +137,7 @@ class Tags extends SimpleLookup
     ) {
         $objAttribute = $this->getMetaModel()->getAttributeById($this->get('attr_id'));
 
-        $arrCount   = array();
+        $arrCount   = [];
         $arrOptions = $this->getParameterFilterOptions($objAttribute, $arrIds, $arrCount);
 
         $arrParamValue  = null;
@@ -215,7 +215,7 @@ class Tags extends SimpleLookup
     {
         // Filter out the magic keyword for none selected.
         if ($arrParamValue && in_array('--none--', $arrParamValue)) {
-            $arrParamValue = array();
+            $arrParamValue = [];
         }
 
         // Filter out the magic keyword for all selected.
@@ -255,37 +255,38 @@ class Tags extends SimpleLookup
         $arrParamValue,
         $arrMyFilterUrl
     ) {
-        return  array(
+        return [
             $this->getParamName() => $this->prepareFrontendFilterWidget(
-                array(
-                    'label' => array(
+                [
+                    'label'     => [
                         ($this->get('label') ? $this->get('label') : $objAttribute->getName()),
                         'GET: ' . $strParamName
-                    ),
+                    ],
                     'inputType' => 'tags',
-                    'options' => $arrOptions,
-                    'count' => $arrCount,
+                    'options'   => $arrOptions,
+                    'count'     => $arrCount,
                     'showCount' => $objFrontendFilterOptions->isShowCountValues(),
-                    'eval' => array(
+                    'eval'      => [
                         'includeBlankOption' => (
                             $this->get('blankoption')
                             && !$objFrontendFilterOptions->isHideClearFilter()
                         ),
                         'blankOptionLabel'   => &$GLOBALS['TL_LANG']['metamodels_frontendfilter']['do_not_filter'],
+                        'showSelectAll'      => $this->get('show_select_all'),
                         'multiple'           => true,
                         'colname'            => $objAttribute->getColName(),
                         'urlparam'           => $strParamName,
                         'onlyused'           => $this->get('onlyused'),
                         'onlypossible'       => $this->get('onlypossible'),
                         'template'           => $this->get('template')
-                    ),
+                    ],
                     // We need to implode again to have it transported correctly in the frontend filter.
-                    'urlvalue' => !empty($arrParamValue) ? implode(',', $arrParamValue) : ''
-                ),
+                    'urlvalue'  => !empty($arrParamValue) ? implode(',', $arrParamValue) : ''
+                ],
                 $arrMyFilterUrl,
                 $arrJumpTo,
                 $objFrontendFilterOptions
             )
-        );
+        ];
     }
 }
