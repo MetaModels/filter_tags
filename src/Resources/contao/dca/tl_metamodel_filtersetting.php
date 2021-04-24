@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/filter_tags.
  *
- * (c) 2012-2020 The MetaModels team.
+ * (c) 2012-2021 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,7 +18,7 @@
  * @author     David Molineus <mail@netzmacht.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
  * @author     Sven Baumann <baumann.sv@gmail.com>
- * @copyright  2012-2020 The MetaModels team.
+ * @copyright  2012-2021 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
@@ -30,6 +30,7 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends d
     '+fefilter' => [
         'urlparam',
         'label',
+        'hide_label',
         'template',
         'blankoption',
         'show_select_all',
