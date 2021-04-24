@@ -26,6 +26,7 @@
 
 namespace MetaModels\FilterTagsBundle\FilterSetting;
 
+use Contao\StringUtil;
 use MetaModels\Attribute\IAttribute;
 use MetaModels\Filter\Filter;
 use MetaModels\Filter\IFilter;
@@ -255,6 +256,8 @@ class Tags extends SimpleLookup
         $arrParamValue,
         $arrMyFilterUrl
     ) {
+        $cssID = StringUtil::deserialize($this->get('cssID'), true);
+
         return [
             $this->getParamName() => $this->prepareFrontendFilterWidget(
                 [
