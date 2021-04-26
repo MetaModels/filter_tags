@@ -32,6 +32,7 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends d
         'label',
         'hide_label',
         'template',
+        'apply_sorting',
         'blankoption',
         'show_select_all',
         'useor',
