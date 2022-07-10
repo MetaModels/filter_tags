@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/filter_tags.
  *
- * (c) 2012-2021 The MetaModels team.
+ * (c) 2012-2022 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,7 +18,7 @@
  * @author     David Maack <david.maack@arcor.de>
  * @author     David Molineus <mail@netzmacht.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
- * @copyright  2012-2021 The MetaModels team.
+ * @copyright  2012-2022 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
@@ -82,7 +82,7 @@ class Tags extends SimpleLookup
     public function prepareRules(IFilter $objFilter, $arrFilterUrl)
     {
         $objMetaModel = $this->getMetaModel();
-        $objAttribute = $objMetaModel->getAttributeById($this->get('attr_id'));
+        $objAttribute = $objMetaModel->getAttributeById((int) $this->get('attr_id'));
         $strParamName = $this->getParamName();
 
         $arrParamValue = $this->buildParamValue($arrFilterUrl, $strParamName);
@@ -136,7 +136,7 @@ class Tags extends SimpleLookup
         $arrJumpTo,
         FrontendFilterOptions $objFrontendFilterOptions
     ) {
-        $objAttribute = $this->getMetaModel()->getAttributeById($this->get('attr_id'));
+        $objAttribute = $this->getMetaModel()->getAttributeById((int) $this->get('attr_id'));
 
         $arrCount   = [];
         $arrOptions = $this->getParameterFilterOptions($objAttribute, $arrIds, $arrCount);
