@@ -7,4 +7,4 @@
 Tags filter
 ===========
 
-MetaModels tags filter
+MetaModels tags filter.
