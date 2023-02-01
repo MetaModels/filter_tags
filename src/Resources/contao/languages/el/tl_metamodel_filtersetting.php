@@ -1,21 +1,27 @@
 <?php
 /**
- * Translations are managed using Transifex. To create a new translation
+ * This file is part of MetaModels/filter_tags.
+ *
+ * (c) 2012-2023 The MetaModels team.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * This project is provided in good faith and hope to be usable by anyone.
+ *
+ * Translations are managed automatically using Transifex. To create a new translation
  * or to help to maintain an existing one, please register at transifex.com.
  *
- * @link http://help.transifex.com/intro/translating.html
- * @link https://www.transifex.com/projects/p/metamodels/language/el/
+ * Last-updated: 2023-02-01T16:10:22+00:00
  *
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
- *
- * last-updated: 2013-05-13T22:14:36+02:00
+ * @copyright 2012-2023 The MetaModels team.
+ * @license   https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0-or-later
+ * @link      https://www.transifex.com/metamodels/public/
+ * @link      https://www.transifex.com/signup/?join_project=metamodels
  */
 
 
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlypossible']['0'] = 'Παραμένοντας ετικέτες μόνο ';
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlypossible']['1'] = 'Εμφάνιση μόνο των επιλογων, που εξακολουθούν να ανατιθενται κάπου μετά το πραγματικο φίλτρο που έχει ρυθμιστεί.';
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlyused']['0']     = 'Ειδικες ετικέτες μόνο ';
-$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['onlyused']['1']     = 'Εμφάνιση μόνο των επιλογων, που έχουν εκχωρηθεί κάπου στο MetaModel.';
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['typenames']['tags'] = 'Πολλαπλη επιλογή ';
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor']['0']        = 'OR';
 $GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor']['1']        = 'OR-σύνδεση των ετικετών. Ρυθμίζεται αυτόματα, εάν το χαρακτηριστικό είναι AΕπιλέξτε το τύπου. ';
+
