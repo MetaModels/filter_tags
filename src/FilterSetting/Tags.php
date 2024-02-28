@@ -86,11 +86,11 @@ class Tags extends SimpleLookup
         $strParamName = $this->getParamName();
         assert(\is_string($strParamName));
 
-        $arrParamValue = $this->buildParamValue($arrFilterUrl, $strParamName) ?? [];
+        $arrParamValue = $this->buildParamValue($arrFilterUrl, $strParamName);
         $arrOptions    = $this->getParameterFilterOptions($objAttribute, null);
         $arrParamValue = $this->filterParamValue($arrParamValue, $arrOptions);
 
-        if ($strParamName && $arrOptions) {
+        if ($strParamName && \is_array($arrParamValue) && $arrOptions) {
             // Determine which parenting rule to use, AND or OR.
             if ($this->get('useor')) {
                 $objParentRule = new ConditionOr();
@@ -215,7 +215,7 @@ class Tags extends SimpleLookup
     /**
      * Filter --all-- and --none-- values.
      *
-     * @param array $arrParamValue Param value which shall be filtered.
+     * @param array|null $arrParamValue Param value which shall be filtered.
      * @param array $arrOptions    Filter options.
      *
      * @return array
@@ -223,12 +223,12 @@ class Tags extends SimpleLookup
     private function filterParamValue($arrParamValue, $arrOptions)
     {
         // Filter out the magic keyword for none selected.
-        if ($arrParamValue && \in_array('--none--', $arrParamValue)) {
+        if (null !== $arrParamValue && \in_array('--none--', $arrParamValue)) {
             $arrParamValue = [];
         }
 
         // Filter out the magic keyword for all selected.
-        if ($arrParamValue && \in_array('--all--', $arrParamValue)) {
+        if (null !== $arrParamValue && \in_array('--all--', $arrParamValue)) {
             $arrParamValue = \array_keys($arrOptions);
 
             return $arrParamValue;
