@@ -218,7 +218,7 @@ class Tags extends SimpleLookup
      * @param array|null $arrParamValue Param value which shall be filtered.
      * @param array $arrOptions    Filter options.
      *
-     * @return array
+     * @return array|null
      */
     private function filterParamValue($arrParamValue, $arrOptions)
     {
