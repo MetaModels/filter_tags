@@ -157,7 +157,8 @@ class Tags extends SimpleLookup
             if (\is_array($arrFilterUrl[$strParamName])) {
                 $arrParamValue = $arrFilterUrl[$strParamName];
             } else {
-                $arrParamValue = \explode(',', $arrFilterUrl[$strParamName]);
+                $arrParamValue                 = \explode(',', $arrFilterUrl[$strParamName]);
+                $arrMyFilterUrl[$strParamName] = $arrParamValue;
             }
 
             switch (true) {
