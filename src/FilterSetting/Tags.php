@@ -110,7 +110,11 @@ class Tags extends SimpleLookup
                 if (\array_key_exists($strParamValue, $arrOptions)) {
                     $objSubFilter = new Filter($objMetaModel);
                     $objSubFilter->addFilterRule(
-                        new SearchAttribute($objAttribute, $strParamValue, $arrValidLanguages)
+                        new SearchAttribute(
+                            $objAttribute,
+                            $strParamValue,
+                            \array_values(\array_filter($arrValidLanguages))
+                        )
                     );
 
                     $objParentRule->addChild($objSubFilter);
