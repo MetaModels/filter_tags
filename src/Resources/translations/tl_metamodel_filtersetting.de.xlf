@@ -1,0 +1,26 @@
+<?xml version="1.0" ?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="src/Resources/translations/tl_metamodel_filtersetting.en.xlf" target-language="de">
+    <body>
+      <trans-unit id="typenames.tags" resname="typenames.tags">
+        <source>Multi selection</source>
+        <target>Mehrfachauswahl</target>
+      </trans-unit>
+      <trans-unit id="useor.label" resname="useor.label">
+        <source>OR</source>
+        <target>ODER</target>
+      </trans-unit>
+      <trans-unit id="useor.description" resname="useor.description">
+        <source>OR-linking of the tags. Is automatically set if the attribute is aselect-type.</source>
+        <target>ODER-Verknüpfung der Tags. Wird automatisch gesetzt, wenn das Attribut vom Typ &quot;Auswahl&quot; ist.</target>
+      </trans-unit>
+      <trans-unit id="show_select_all.label" resname="show_select_all.label">
+        <source>Show checkbox &quot;add all&quot;</source>
+        <target>Checkbox &quot;Alle hinzufügen&quot; anzeigen</target>
+      </trans-unit>
+      <trans-unit id="show_select_all.description" resname="show_select_all.description">
+        <source>If this checkbox set, show checkbox &quot;add all&quot; to activate all checkboxes at once.</source>
+        <target>Wenn die Checkbox gesetzt ist, zeigen Sie das Kontrollkästchen &quot;Alle hinzufügen&quot; an, um alle Kontrollkästchen auf einmal zu aktivieren.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
