@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/filter_tags.
  *
- * (c) 2012-2021 The MetaModels team.
+ * (c) 2012-2024 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,13 +18,13 @@
  * @author     David Molineus <mail@netzmacht.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
  * @author     Sven Baumann <baumann.sv@gmail.com>
- * @copyright  2012-2021 The MetaModels team.
+ * @copyright  2012-2024 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends default'] = [
-    '+config' => [
+    '+config'   => [
         'attr_id',
     ],
     '+fefilter' => [
@@ -44,22 +44,24 @@ $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['metapalettes']['tags extends d
 ];
 
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['useor'] = [
-    'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['useor'],
-    'exclude'                 => true,
-    'default'                 => true,
-    'inputType'               => 'checkbox',
-    'sql'                     => 'char(1) NOT NULL default \'0\'',
-    'eval'                    => [
-        'tl_class'            => 'clr w50 cbx m12',
+    'label'       => 'useor.label',
+    'description' => 'useor.description',
+    'exclude'     => true,
+    'default'     => true,
+    'inputType'   => 'checkbox',
+    'sql'         => 'char(1) NOT NULL default \'0\'',
+    'eval'        => [
+        'tl_class' => 'clr w50 cbx m12',
     ],
 ];
 
 $GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['fields']['show_select_all'] = [
-    'label'                   => &$GLOBALS['TL_LANG']['tl_metamodel_filtersetting']['show_select_all'],
-    'exclude'                 => true,
-    'inputType'               => 'checkbox',
-    'sql'                     => 'char(1) NOT NULL default \'0\'',
-    'eval'                    => [
-        'tl_class'            => 'w50 cbx m12',
+    'label'       => 'show_select_all.label',
+    'description' => 'show_select_all.description',
+    'exclude'     => true,
+    'inputType'   => 'checkbox',
+    'sql'         => 'char(1) NOT NULL default \'0\'',
+    'eval'        => [
+        'tl_class' => 'w50 cbx m12',
     ],
 ];
