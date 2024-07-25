@@ -288,7 +288,7 @@ class Tags extends SimpleLookup
                             $this->get('blankoption')
                             && !$objFrontendFilterOptions->isHideClearFilter()
                         ),
-                        'blankOptionLabel'   => &$GLOBALS['TL_LANG']['metamodels_frontendfilter']['do_not_filter'],
+                        'blankOptionLabel'   => $this->translator->trans('do_not_filter', [], 'metamodels_filter'),
                         'showSelectAll'      => $this->get('show_select_all'),
                         'multiple'           => true,
                         'colname'            => $objAttribute->getColName(),
