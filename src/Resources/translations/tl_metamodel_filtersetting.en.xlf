@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="src/Resources/translations/tl_metamodel_filtersetting.en.xlf">
+    <body>
+      <trans-unit id="typenames.tags" resname="typenames.tags">
+        <source>Multi selection</source>
+      </trans-unit>
+      <trans-unit id="useor.label" resname="useor.label">
+        <source>OR</source>
+      </trans-unit>
+      <trans-unit id="useor.description" resname="useor.description">
+        <source>OR-linking of the tags. Is automatically set if the attribute is aselect-type.</source>
+      </trans-unit>
+      <trans-unit id="show_select_all.label" resname="show_select_all.label">
+        <source>Show checkbox "add all"</source>
+      </trans-unit>
+      <trans-unit id="show_select_all.description" resname="show_select_all.description">
+        <source>If this checkbox set, show checkbox "add all" to activate all checkboxes at once.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

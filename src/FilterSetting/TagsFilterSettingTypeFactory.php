@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/filter_tags.
  *
- * (c) 2012-2021 The MetaModels team.
+ * (c) 2012-2024 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,7 +14,7 @@
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
  * @author     Sven Baumann <baumann.sv@gmail.com>
- * @copyright  2012-2022 The MetaModels team.
+ * @copyright  2012-2024 The MetaModels team.
  * @license    https://github.com/MetaModels/filter_tags/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
@@ -24,6 +24,7 @@ namespace MetaModels\FilterTagsBundle\FilterSetting;
 use MetaModels\Filter\FilterUrlBuilder;
 use MetaModels\Filter\Setting\AbstractFilterSettingTypeFactory;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Attribute type factory for tags filter settings.
@@ -31,24 +32,13 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
 {
     /**
-     * The event dispatcher.
-     *
-     * @var EventDispatcherInterface
-     */
-    private $dispatcher;
-
-    /**
-     * The filter URL builder.
-     *
-     * @var FilterUrlBuilder
-     */
-    private $filterUrlBuilder;
-
-    /**
      * {@inheritDoc}
      */
-    public function __construct(EventDispatcherInterface $dispatcher, FilterUrlBuilder $filterUrlBuilder)
-    {
+    public function __construct(
+        private readonly EventDispatcherInterface $dispatcher,
+        private readonly FilterUrlBuilder $filterUrlBuilder,
+        private readonly TranslatorInterface $translator,
+    ) {
         parent::__construct();
 
         $this
@@ -66,13 +56,14 @@ class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
             'translatedtext',
             'tags',
             'translatedtags',
+            'numeric',
+            'timestamp',
+            'combinedvalues',
+            'translatedcombinedvalues',
         ];
         foreach ($attributes as $attribute) {
             $this->addKnownAttributeType($attribute);
         }
-
-        $this->dispatcher       = $dispatcher;
-        $this->filterUrlBuilder = $filterUrlBuilder;
     }
 
     /**
@@ -80,6 +71,6 @@ class TagsFilterSettingTypeFactory extends AbstractFilterSettingTypeFactory
      */
     public function createInstance($information, $filterSettings)
     {
-        return new Tags($filterSettings, $information, $this->dispatcher, $this->filterUrlBuilder);
+        return new Tags($filterSettings, $information, $this->dispatcher, $this->filterUrlBuilder, $this->translator);
     }
 }
